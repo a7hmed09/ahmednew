@@ -1,0 +1,10 @@
+git config --global user.name "ahmedalmajed"
+git config --global user.email "you@example.com"
+
+cd /path/to/project
+git init
+git add .
+git commit -m "Initial commit"
+
+git remote add origin https://github.com/username/repo.git
+git push -u origin main
