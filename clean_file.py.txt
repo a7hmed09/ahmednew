@@ -1,0 +1,17 @@
+import re
+
+# الملف الأصلي
+input_file = "istagram_username_checker.py"
+# الملف المنظف
+output_file = "istagram_username_checker_clean.py"
+
+with open(input_file, "r", encoding="utf-8", errors="ignore") as f:
+    content = f.read()
+
+# حذف أي محارف غير قابلة للطباعة (عدا المسافة \x20، والتاب \t، والنيو لاين \n)
+cleaned = re.sub(r"[^\x20-\x7E\n\t]", "", content)
+
+with open(output_file, "w", encoding="utf-8") as f:
+    f.write(cleaned)
+
+print(f"تم إنشاء نسخة نظيفة: {output_file}")
